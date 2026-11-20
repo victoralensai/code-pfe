@@ -8,3 +8,9 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Données téléchargées et résultats d'expériences (recréés par les scripts)
+/data/
+/outputs/
+.pytest_cache/
+.ruff_cache/
