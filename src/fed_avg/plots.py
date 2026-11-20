@@ -3,14 +3,11 @@
 import argparse
 import csv
 from pathlib import Path
-
 import matplotlib
-
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import MaxNLocator
-
 
     
 def plot_accuracy(metrics_path: Path, output: Path, title: str = "PathMNIST — FedAvg"):

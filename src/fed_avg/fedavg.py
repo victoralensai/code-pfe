@@ -4,6 +4,7 @@ from torch.utils.data import DataLoader
 from copy import deepcopy
 from collections.abc import Mapping, Sequence
 
+
 class SmallCNN(nn.Module):
     """Small CNN, without softmax, that takes 28*28 pictures in input, with 3 colours, and returns a class between 1 and 9"""
     def __init__(self):
