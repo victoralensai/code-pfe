@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from code-pfe!")
+"""Première expérience fédérée : un FedAvg explicite, sans bibliothèque FL."""
