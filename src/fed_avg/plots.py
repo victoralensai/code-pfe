@@ -12,8 +12,15 @@ import numpy as np
 from matplotlib.ticker import MaxNLocator
 
 
+    
 def plot_accuracy(metrics_path: Path, output: Path, title: str = "PathMNIST — FedAvg"):
-    """Plot the accuracy of each trained model, along with the mean and standard deviation."""
+    """Plot the accuracy of each trained model, along with the mean and standard deviation.
+
+    Args:
+        metrics_path (Path): Path where metrics.csv is going to be saved, file containing all the metrics.
+        output (Path): Path where the accuracy.png is going to be saved, image with the plot of the accuracy.
+        title (str, optional): Title of the plot. Defaults to "PathMNIST — FedAvg".
+    """
     with metrics_path.open(newline="") as handle:
         rows = list(csv.DictReader(handle))
     fig, axes = plt.subplots(1, 2, figsize=(12, 4.5), sharey=True)
@@ -66,7 +73,13 @@ def plot_accuracy(metrics_path: Path, output: Path, title: str = "PathMNIST — 
 
 
 def plot_partitions(counts: np.ndarray, output: Path, title: str):
-    """Visualize class heterogeneity across hospitals."""
+    """Visualize class heterogeneity across hospitals.
+
+    Args:
+        counts (np.ndarray): Number of elements per class.
+        output (Path): Path where the partition.png is going to be saved, image with the visualization of the partition.
+        title (str): Title of the visualization.
+    """
     proportions = counts / counts.sum(axis=1, keepdims=True)
     fig, ax = plt.subplots(figsize=(9, 5))
     image = ax.imshow(proportions, vmin=0, vmax=1, cmap="Blues", aspect="auto")
